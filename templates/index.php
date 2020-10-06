@@ -17,6 +17,10 @@
 <body>
 <div>
 <!--    TODO:do sth - there's nothing here yet-->
+    afdsafsadfas
+    <?php
+    echo phpversion();
+    ?>
 </div>
 </body>
 </html>

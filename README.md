@@ -1,1 +1,1 @@
-'1st commit'
+configured project ready to code
