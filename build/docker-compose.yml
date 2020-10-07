@@ -1,0 +1,48 @@
+version: '3.7'
+
+networks:
+  laravel:
+
+services:
+  web:
+    image: nginx:latest
+    depends_on:
+      - php
+      - postgresql
+    container_name: al_web
+    volumes:
+      - ${PROJECT_PATH}:${DESTINATION_PATH}
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8080:80"
+    networks:
+      - laravel
+
+  postgresql:
+    image: postgres:12-alpine
+    container_name: al_db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: data
+      POSTGRES_USER: sm
+      POSTGRES_PASSWORD: qwe123
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - laravel
+
+  php:
+    build: php
+    container_name: al_php
+    volumes:
+      - ${PROJECT_PATH}:${DESTINATION_PATH}
+    networks:
+      - laravel
+    ports:
+      - "9000:9000"
+
+volumes:
+  postgres-data:
+    driver: local
