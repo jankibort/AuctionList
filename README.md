@@ -7,7 +7,7 @@ This project is a light version of listing service. All you need to do to explor
 - ##### edit etc/hosts file > add "127.0.0.1 dockerized"
 **From now on there is service dockerized:8080 aviable**
 ###### WALK AROUND: 
-######- on steps 2,3,4: extract files from "build" straight to "AuctionList" directory and replace ${PROJECT_PATH} var with . in docker-compose.yml 
+######- on steps 2,3,4: extract files from "build" straight to "dockerized" directory and replace ${PROJECT_PATH} var with . in docker-compose.yml 
 ######- on last step: edit nginx.conf > "server_name localhost"
 ######- those steps will make service aviable on localhost:8080
 
