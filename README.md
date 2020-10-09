@@ -1,5 +1,5 @@
 This project is nothing more than configured docker environment. All you need to do to explore is: 
-- ##### download docker (https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
+- ##### download docker (https://www.docker.com/get-started)
 - ##### cp .example.env .env
 - ##### edit .env
 - ##### cd build
